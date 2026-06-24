@@ -4,7 +4,6 @@
 
 #include <physical_layouts.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/led/led.h>
 #include <dt-bindings/pinctrl/nrf-pinctrl.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <zephyr/dt-bindings/adc/adc.h>
@@ -162,33 +161,6 @@
     pinctrl-1 = <&spi3_sleep>;
     pinctrl-names = "default", "sleep";
 
-    pad15_leds: ws2812@0 {
-        compatible = "worldsemi,ws2812-spi";
-        reg = <0>;
-        status = "okay";
-        spi-max-frequency = <4000000>;
-        chain-length = <16>;
-        spi-one-frame = <0x70>;
-        spi-zero-frame = <0x40>;
-        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-        
-        led0: led_0 { x = <0>;   y = <0>; };
-        led1: led_1 { x = <10>; y = <0>; };
-        led2: led_2 { x = <20>; y = <0>; };
-        led3: led_3 { x = <0>;   y = <10>; };
-        led4: led_4 { x = <10>; y = <10>; };
-        led5: led_5 { x = <20>; y = <10>; };
-        led6: led_6 { x = <0>;   y = <20>; };
-        led7: led_7 { x = <10>; y = <20>; };
-        led8: led_8 { x = <20>; y = <20>; };
-        led15: led_15 { x = <30>; y = <20>; };
-        led9:  led_9  { x = <0>;   y = <30>; };
-        led10: led_10 { x = <10>; y = <30>; };
-        led11: led_11 { x = <20>; y = <30>; };
-        led12: led_12 { x = <0>;   y = <40>; };
-        led13: led_13 { x = <10>; y = <40>; };
-        led14: led_14 { x = <20>; y = <40>; };
-    };
 };
 
 &adc {
